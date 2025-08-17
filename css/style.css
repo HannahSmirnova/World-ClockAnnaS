@@ -39,6 +39,7 @@ h2 {
 }
 
 .city {
+  display: flex;
   border: 1px solid #ddd;
   padding: 20px;
   margin-bottom: 20px;
