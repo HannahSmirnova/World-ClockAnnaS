@@ -33,14 +33,17 @@ h2 {
 }
 
 .time {
-  font-size: 46px;
+  font-size: 36px;
   margin-bottom: 10px;
   padding-top: 20px;
 }
 
-.time small {
-  font-size: 18px;
-  line-height: 36px;
+.city {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #fff;
 }
 
 .city:hover {
