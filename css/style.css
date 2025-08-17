@@ -1,21 +1,37 @@
-body,
-h1,
-h2 {
+body {
   font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f7fe;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
 }
+
 .container {
   max-width: 600px;
+  width: 100%;
   margin: 60px auto;
   background: white;
   padding: 30px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
-  margin: 30px 15px;
-  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 22px;
+  text-align: center;
 }
 
 .time {
   font-size: 36px;
+  text-align: center;
 }
 
 .time small {
@@ -23,20 +39,15 @@ h2 {
   line-height: 36px;
 }
 
-h1 {
-  font-size: 28px;
-}
-
-h2 {
-  font-size: 22px;
-}
 .city:hover {
   background-color: #f0eefc;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 footer {
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
