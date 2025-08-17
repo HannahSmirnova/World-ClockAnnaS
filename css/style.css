@@ -1,36 +1,67 @@
-body,
-h1,
-h2 {
+body {
+  background-color: #f9f7fe;
   font-family: "Inter", sans-serif;
-}
-.container {
-  margin: 30px 15px;
-  padding: 20px;
-}
-
-.time {
-  font-size: 36px;
-}
-
-.time small {
-  font-size: 18px;
-  line-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 h1 {
   font-size: 28px;
+  text-align: center;
 }
 
 h2 {
   font-size: 22px;
+  margin: 0 0 10px;
 }
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  background: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+}
+
+.city {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.city:last-child {
+  border-bottom: none;
+}
+
 .city:hover {
   background-color: #f0eefc;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+.time {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.time small {
+  font-size: 18px;
+  line-height: 36px;
+  vertical-align: middle;
+}
+
 footer {
   margin-top: 40px;
   padding-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.8);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
