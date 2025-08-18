@@ -63,7 +63,16 @@ h2 {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+#home-link {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+#home-link:hover {
+  background-color: #005fa3;
+}
 footer {
   margin-top: 40px;
   padding-top: 20px;

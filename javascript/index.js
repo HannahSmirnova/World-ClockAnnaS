@@ -75,3 +75,17 @@ function renderSelectedCity(cityName = "") {
 
 document.querySelector("#city-select").addEventListener("change", updateCity);
 setInterval(updateTime, 1000);
+
+document
+  .querySelector("#home-link")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    document.querySelector("#static-cities").style.display = "block";
+    document.querySelector("#selected-city").innerHTML = "";
+    document.querySelector("#city-select").value = "";
+
+    if (cityInterval) {
+      clearInterval(cityInterval);
+      cityInterval = null;
+    }
+  });
