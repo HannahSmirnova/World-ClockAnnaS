@@ -71,7 +71,7 @@ h2 {
   background-color: #f9f7fe;
   color: black;
   border-radius: 2px;
-  border: 1px;
+  border: 1px solid;
   text-decoration: none;
 }
 #home-link:hover {
