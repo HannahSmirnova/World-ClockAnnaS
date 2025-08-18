@@ -66,10 +66,10 @@ h2 {
 #home-link {
   display: block;
   padding: 10px 20px;
+  text-align: center;
   background-color: #f9f7fe;
   color: black;
   border-radius: 2px;
-  border-color: black;
   border: 1px;
   text-decoration: none;
 }
