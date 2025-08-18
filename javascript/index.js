@@ -20,23 +20,42 @@ function updateTime() {
   }
 }
 
+let selectedCityTimeZone = null;
+let cityInterval = null;
+
 function updateCity(event) {
-  let cityTimeZone = event.target.value;
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  let cityTime = moment().tz(cityTimeZone);
-  let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = `
-  <div class="city">
-          <h2>${cityName}</h2>
-      <div class="date">${cityDate.format("MMMM	Do YYYY")}</div>
+  selectedCityTimeZone = event.target.value;
+
+  if (!selectedCityTimeZone) return;
+
+  let selectedCityName = event.target.options[event.target.selectedIndex].text;
+
+  if (selectedCityTimeZone === "current") {
+    selectedCityTimeZone = moment.tz.guess();
+    selectedCityName = "Your Location";
+  }
+  document.querySelector("#static-cities").style.display = "none";
+
+  renderSelectedCity(selectedCityName);
+  if (cityInterval) clearInterval(cityInterval);
+  cityInterval = setInterval(() => renderSelectedCity(selectedCityName), 1000);
+}
+
+function renderSelectedCity(cityName = "") {
+  if (!selectedCityTimeZone) return;
+
+  let cityTime = moment().tz(selectedCityTimeZone);
+  let selectedCityElement = document.querySelector("#selected-city");
+  selectedCityElement.innerHTML = `
+    <div class="city">
+      <div class="city-info">
+        <h2>${cityName}</h2>
+        <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+      </div>
+      <div class="time">${cityTime.format("h:mm:ss A")}</div>
     </div>
-    <div class="time">${cityTime.format("h:mm:ss A")}</div>
-  </div>
   `;
 }
 
-updateTime();
+document.querySelector("#city-select").addEventListener("change", updateCity);
 setInterval(updateTime, 1000);
-
-let citiesSelectElement = document.querySelector("#selected-city");
-citiesSelectElement.addEventListener("change", updateCity);
