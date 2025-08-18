@@ -52,7 +52,7 @@ function updateCity(event) {
   }
 
   document.querySelector("#static-cities").style.display = "none";
-
+  document.querySelector("#home-link").style.display = "block";
   renderSelectedCity(selectedCityName);
 
   if (cityInterval) clearInterval(cityInterval);
@@ -74,23 +74,20 @@ function renderSelectedCity(cityName = "") {
     </div>
   `;
 }
-
+document.querySelector("#home-link").style.display = "block";
 document.querySelector("#city-select").addEventListener("change", updateCity);
 setInterval(updateTime, 1000);
 
-document
-  .querySelector("#home-link")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
+document.addEventListener("click", function (event) {
+  event.preventDefault();
+  document.querySelector("#static-cities").style.display = "block";
+  document.querySelector("#selected-city").innerHTML = "";
+  document.querySelector("#city-select").value = "";
 
-    document.querySelector("#static-cities").style.display = "block";
-    document.querySelector("#selected-city").innerHTML = "";
-    document.querySelector("#city-select").value = "";
+  selectedCityTimeZone = null;
 
-    selectedCityTimeZone = null;
-
-    if (cityInterval) {
-      clearInterval(cityInterval);
-      cityInterval = null;
-    }
-  });
+  if (cityInterval) {
+    clearInterval(cityInterval);
+    cityInterval = null;
+  }
+});
