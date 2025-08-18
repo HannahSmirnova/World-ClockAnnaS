@@ -20,9 +20,6 @@ function updateTime() {
   }
 }
 
-let selectedCityTimeZone = null;
-let cityInterval = null;
-
 function updateCity(event) {
   selectedCityTimeZone = event.target.value;
   let selectedCityName = event.target.options[event.target.selectedIndex].text;
