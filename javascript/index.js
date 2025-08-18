@@ -32,7 +32,7 @@ function updateCity(event) {
 
   if (selectedCityTimeZone === "current") {
     selectedCityTimeZone = moment.tz.guess();
-    selectedCityName = "Your Location";
+    selectedCityName = "Yorkton";
   }
   document.querySelector("#static-cities").style.display = "none";
 
