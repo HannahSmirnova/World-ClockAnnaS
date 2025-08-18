@@ -50,9 +50,11 @@ function updateCity(event) {
   } else {
     selectedCityName = event.target.options[event.target.selectedIndex].text;
   }
+
   document.querySelector("#static-cities").style.display = "none";
 
   renderSelectedCity(selectedCityName);
+
   if (cityInterval) clearInterval(cityInterval);
   cityInterval = setInterval(() => renderSelectedCity(selectedCityName), 1000);
 }
@@ -80,9 +82,12 @@ document
   .querySelector("#home-link")
   .addEventListener("click", function (event) {
     event.preventDefault();
+
     document.querySelector("#static-cities").style.display = "block";
     document.querySelector("#selected-city").innerHTML = "";
     document.querySelector("#city-select").value = "";
+
+    selectedCityTimeZone = null;
 
     if (cityInterval) {
       clearInterval(cityInterval);
