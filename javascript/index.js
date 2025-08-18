@@ -8,6 +8,7 @@ function updateTime() {
     losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
     losAngelesTimeElement.innerHTML = losAngelesTime.format("h:mm:ss A");
   }
+
   let sydneyElement = document.querySelector("#sydney");
   if (sydneyElement) {
     let sydneyDateElement = sydneyElement.querySelector(".date");
@@ -18,8 +19,10 @@ function updateTime() {
     sydneyTimeElement.innerHTML = sydneyTime.format("h:mm:ss A");
   }
 }
+
 let selectedCityTimeZone = null;
 let cityInterval = null;
+
 function updateCity(event) {
   selectedCityTimeZone = event.target.value;
   let selectedCityName = event.target.options[event.target.selectedIndex].text;
@@ -33,11 +36,12 @@ function updateCity(event) {
   if (cityInterval) clearInterval(cityInterval);
   cityInterval = setInterval(() => renderSelectedCity(selectedCityName), 1000);
 }
+
 function renderSelectedCity(cityName = "") {
   if (!selectedCityTimeZone) return;
 
   let cityTime = moment().tz(selectedCityTimeZone);
-  let selectedCityElement = document.querySelector("#city-select");
+  let selectedCityElement = document.querySelector("#selected-city");
   selectedCityElement.innerHTML = `
     <div class="city">
       <h2>${cityName}</h2>
@@ -46,5 +50,6 @@ function renderSelectedCity(cityName = "") {
     </div>
   `;
 }
-updateTime();
+
+document.querySelector("#city-select").addEventListener("change", updateCity);
 setInterval(updateTime, 1000);

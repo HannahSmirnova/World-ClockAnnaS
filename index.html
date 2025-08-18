@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/style.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
-<script src="javascript/index.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
@@ -23,7 +22,8 @@
          <option value="Europe/Moscow">Moscow</option>
       </select>
 
-      <div id="cities">
+      <div id="static-cities">
+        <div id="selected-city"></div>
         <div class="city" id="los-angeles">
   <div class="city-info">
     <h2>Los Angeles</h2>
@@ -48,5 +48,6 @@
         open sourced on GitHub
       </a>
     </footer>
+    <script src="javascript/index.js"></script>
   </body>
 </html>
