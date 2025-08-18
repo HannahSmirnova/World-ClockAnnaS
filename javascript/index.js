@@ -18,6 +18,16 @@ function updateTime() {
     sydneyDateElement.innerHTML = sydneyTime.format("MMMM Do YYYY");
     sydneyTimeElement.innerHTML = sydneyTime.format("h:mm:ss A");
   }
+
+  let montrealElement = document.querySelector("#montreal");
+  if (montrealElement) {
+    let montrealDateElement = montrealElement.querySelector(".date");
+    let montrealTimeElement = montrealElement.querySelector(".time");
+    let montrealTime = moment().tz("America/Montreal");
+
+    montrealDateElement.innerHTML = montrealTime.format("MMMM Do YYYY");
+    montrealTimeElement.innerHTML = montrealTime.format("h:mm:ss A");
+  }
 }
 
 let selectedCityTimeZone = null;
