@@ -26,25 +26,20 @@ h1 {
   margin-bottom: 10px;
   text-align: center;
 }
+h2 {
+  margin: 0;
+  font-size: 22px;
+}
 
 .city {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   border: 1px solid #ddd;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
   background-color: #fff;
-}
-
-.city-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.city h2 {
-  margin: 0;
-  font-size: 22px;
 }
 
 .date {
