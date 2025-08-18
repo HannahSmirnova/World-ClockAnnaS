@@ -28,11 +28,17 @@ function updateCity(event) {
 
   if (!selectedCityTimeZone) return;
 
-  let selectedCityName = event.target.options[event.target.selectedIndex].text;
+  let selectedCityName;
 
   if (selectedCityTimeZone === "current") {
     selectedCityTimeZone = moment.tz.guess();
-    selectedCityName = "Yorkton";
+
+    selectedCityName =
+      selectedCityTimeZone === "America/Regina"
+        ? "Yorkton"
+        : selectedCityTimeZone.replace("_", " ").split("/")[1];
+  } else {
+    selectedCityName = event.target.options[event.target.selectedIndex].text;
   }
   document.querySelector("#static-cities").style.display = "none";
 
